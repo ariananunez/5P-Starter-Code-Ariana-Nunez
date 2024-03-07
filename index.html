@@ -1,0 +1,73 @@
+<!DOCTYPE html> <html><head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Honk">
+        <title>5.P Starter Code [Ariana Nunez]</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&amp;display=swap" rel="stylesheet">
+    <style>body {
+    font-family: 'Oswald', sans-serif;
+    background-color: MediumSeaGreen;
+    text-align: center;
+}
+
+img {
+    width: 400px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Honk', serif;
+    font-size: 25px;
+}</style></head>
+    <body>
+        <div class="title">
+            <h1>What Maluma song are you?</h1>
+        </div>
+        <div class="questions">
+            <h4>How many times do you talk about losing/fumbling your ex?</h4>
+            <img src="https://www.billboard.com/wp-content/uploads/2020/08/Maluma-Hawai-2020-vid-billboard-1548-1597417848.jpg" alt="maluma sad">
+            <br>
+            <input class="question1answer" placeholder="your answer">
+
+            <!--             <button class="question1answer-button">Submit</button> -->
+
+            <div class="question1-message"></div>
+            <br>
+            <h4>Do you like to go out to parties and have fun?<br>Type 'parties' or 'stay home'</h4>
+            <img src="https://www.gannett-cdn.com/authoring/video-thumbnails/e26fbd3d-13f6-4700-b913-6ea1b4f4bd78_thumbnail.jpg" alt="maluma in party">
+            <br>
+            <input placeholder="enter parties or stay home" class="question2answer">
+            <button>Find out what song you are!</button>
+        </div>
+        <div class="result">
+            this is where you will see your quiz result!
+        </div>
+
+
+
+    
+<script>
+/*__POPCODESTART__*/
+var button = document.querySelector("button");
+var result = document.querySelector(".result");
+var howmany = document.querySelector(".howmany");
+var partiesorhome = document.querySelector(".partiesorhome"); //
+
+button.onclick = function () {
+  console.log();
+  var question1Input = document.querySelector(".question1answer").value;
+  var question2Input = document.querySelector(".question2answer").value; ///
+
+  if (question1Input < 10 && question2Input === "parties") {
+    result.innerHTML = "Since you talk about losing your ex " + question1Input + " times and you like to go to " + question2Input + " , then your song is Borro Cassette!";
+  } else if (question1Input > 10 && question2Input === "parties") {
+    result.innerHTML = "Since you talk about losing your ex " + question1Input + " times and you like to go to " + question2Input + " , then your song is El Perdedor!";
+  } else if (question1Input < 10 && question2Input === "home") {
+    result.innerHTML = "Since you talk about losing your ex " + question1Input + " times and you like to stay " + question2Input + " , then your song is Felizes los 4!";
+  } else if (question1Input > 10 && question2Input === "home") {
+    result.innerHTML = "Since you talk about losing your ex " + question1Input + " times and you like to stay " + question2Input + " , then your song is Hawaii!";
+  }
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbImJ1dHRvbiIsImRvY3VtZW50IiwicXVlcnlTZWxlY3RvciIsInJlc3VsdCIsImhvd21hbnkiLCJwYXJ0aWVzb3Job21lIiwib25jbGljayIsImNvbnNvbGUiLCJsb2ciLCJxdWVzdGlvbjFJbnB1dCIsInZhbHVlIiwicXVlc3Rpb24ySW5wdXQiLCJpbm5lckhUTUwiXSwibWFwcGluZ3MiOiJBQUFBLElBQUlBLE1BQU0sR0FBR0MsUUFBUSxDQUFDQyxhQUFULENBQXVCLFFBQXZCLENBQWI7QUFDQSxJQUFJQyxNQUFNLEdBQUdGLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixTQUF2QixDQUFiO0FBQ0EsSUFBSUUsT0FBTyxHQUFHSCxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsVUFBdkIsQ0FBZDtBQUNBLElBQUlHLGFBQWEsR0FBR0osUUFBUSxDQUFDQyxhQUFULENBQXVCLGdCQUF2QixDQUFwQixDLENBRUE7O0FBQ0FGLE1BQU0sQ0FBQ00sT0FBUCxHQUFpQixZQUFXO0FBQ25CQyxFQUFBQSxPQUFPLENBQUNDLEdBQVI7QUFDRCxNQUFJQyxjQUFjLEdBQUdSLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixrQkFBdkIsRUFBMkNRLEtBQWhFO0FBQ0EsTUFBSUMsY0FBYyxHQUFHVixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsa0JBQXZCLEVBQTJDUSxLQUFoRSxDQUhvQixDQUlwQjs7QUFDQSxNQUFJRCxjQUFjLEdBQUcsRUFBakIsSUFBdUJFLGNBQWMsS0FBSyxTQUE5QyxFQUF5RDtBQUNyRFIsSUFBQUEsTUFBTSxDQUFDUyxTQUFQLEdBQW1CLHlDQUF5Q0gsY0FBekMsR0FBMEQsK0JBQTFELEdBQTRGRSxjQUE1RixHQUE2RyxzQ0FBaEk7QUFDSCxHQUZELE1BRU8sSUFBSUYsY0FBYyxHQUFHLEVBQWpCLElBQXVCRSxjQUFjLEtBQUssU0FBOUMsRUFBMEQ7QUFDakVSLElBQUFBLE1BQU0sQ0FBQ1MsU0FBUCxHQUFtQix5Q0FBeUNILGNBQXpDLEdBQXdELCtCQUF4RCxHQUF5RkUsY0FBekYsR0FBd0csbUNBQTNIO0FBQ0MsR0FGTSxNQUVBLElBQUlGLGNBQWMsR0FBRyxFQUFqQixJQUF1QkUsY0FBYyxLQUFLLE1BQTlDLEVBQXNEO0FBQzdEUixJQUFBQSxNQUFNLENBQUNTLFNBQVAsR0FBbUIseUNBQXdDSCxjQUF4QyxHQUF1RCw4QkFBdkQsR0FBdUZFLGNBQXZGLEdBQXNHLHFDQUF6SDtBQUNDLEdBRk0sTUFFQSxJQUFJRixjQUFjLEdBQUcsRUFBakIsSUFBdUJFLGNBQWMsS0FBSyxNQUE5QyxFQUFzRDtBQUN4RFIsSUFBQUEsTUFBTSxDQUFDUyxTQUFQLEdBQW1CLHlDQUF3Q0gsY0FBeEMsR0FBdUQsOEJBQXZELEdBQXVGRSxjQUF2RixHQUFzRyw4QkFBekg7QUFDSjtBQUlBLENBakJUIiwic291cmNlc0NvbnRlbnQiOlsibGV0IGJ1dHRvbiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCJidXR0b25cIik7XG5sZXQgcmVzdWx0ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXN1bHRcIik7XG5sZXQgaG93bWFueSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuaG93bWFueVwiKTtcbmxldCBwYXJ0aWVzb3Job21lID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5wYXJ0aWVzb3Job21lXCIpO1xuXG4vL1xuYnV0dG9uLm9uY2xpY2sgPSBmdW5jdGlvbigpIHtcbiAgICAgICAgIGNvbnNvbGUubG9nKCk7XG4gICAgICAgIGxldCBxdWVzdGlvbjFJbnB1dCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucXVlc3Rpb24xYW5zd2VyXCIpLnZhbHVlO1xuICAgICAgICBsZXQgcXVlc3Rpb24ySW5wdXQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnF1ZXN0aW9uMmFuc3dlclwiKS52YWx1ZTtcbiAgICAgICAgLy8vXG4gICAgICAgIGlmIChxdWVzdGlvbjFJbnB1dCA8IDEwICYmIHF1ZXN0aW9uMklucHV0ID09PSBcInBhcnRpZXNcIikge1xuICAgICAgICAgICAgcmVzdWx0LmlubmVySFRNTCA9IFwiU2luY2UgeW91IHRhbGsgYWJvdXQgbG9zaW5nIHlvdXIgZXggXCIgKyBxdWVzdGlvbjFJbnB1dCArIFwiIHRpbWVzIGFuZCB5b3UgbGlrZSB0byBnbyB0byBcIiArIHF1ZXN0aW9uMklucHV0ICsgXCIgLCB0aGVuIHlvdXIgc29uZyBpcyBCb3JybyBDYXNzZXR0ZSFcIjtcbiAgICAgICAgfSBlbHNlIGlmIChxdWVzdGlvbjFJbnB1dCA+IDEwICYmIHF1ZXN0aW9uMklucHV0ID09PSBcInBhcnRpZXNcIiApIHtcbiAgICAgICAgcmVzdWx0LmlubmVySFRNTCA9IFwiU2luY2UgeW91IHRhbGsgYWJvdXQgbG9zaW5nIHlvdXIgZXggXCIgKyBxdWVzdGlvbjFJbnB1dCtcIiB0aW1lcyBhbmQgeW91IGxpa2UgdG8gZ28gdG8gXCIrIHF1ZXN0aW9uMklucHV0K1wiICwgdGhlbiB5b3VyIHNvbmcgaXMgRWwgUGVyZGVkb3IhXCI7XG4gICAgICAgIH0gZWxzZSBpZiAocXVlc3Rpb24xSW5wdXQgPCAxMCAmJiBxdWVzdGlvbjJJbnB1dCA9PT0gXCJob21lXCIpIHtcbiAgICAgICAgcmVzdWx0LmlubmVySFRNTCA9IFwiU2luY2UgeW91IHRhbGsgYWJvdXQgbG9zaW5nIHlvdXIgZXggXCIrIHF1ZXN0aW9uMUlucHV0K1wiIHRpbWVzIGFuZCB5b3UgbGlrZSB0byBzdGF5IFwiKyBxdWVzdGlvbjJJbnB1dCtcIiAsIHRoZW4geW91ciBzb25nIGlzIEZlbGl6ZXMgbG9zIDQhXCI7XG4gICAgICAgIH0gZWxzZSBpZiAocXVlc3Rpb24xSW5wdXQgPiAxMCAmJiBxdWVzdGlvbjJJbnB1dCA9PT0gXCJob21lXCIpIHtcbiAgICAgICAgICAgICByZXN1bHQuaW5uZXJIVE1MID0gXCJTaW5jZSB5b3UgdGFsayBhYm91dCBsb3NpbmcgeW91ciBleCBcIisgcXVlc3Rpb24xSW5wdXQrXCIgdGltZXMgYW5kIHlvdSBsaWtlIHRvIHN0YXkgXCIrIHF1ZXN0aW9uMklucHV0K1wiICwgdGhlbiB5b3VyIHNvbmcgaXMgSGF3YWlpIVwiO1xuICAgICAgICB9XG5cblxuXG4gICAgICAgIH07Il19</script></body></html>
